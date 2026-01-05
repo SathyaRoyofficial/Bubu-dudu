@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle Time 🧩</title>
+    <link rel="icon" type="image/png" href="/Images/Dudu Standing.png">
+
+    <style>
+        body{
+            background-color: #ffe4ec;
+            text-align: center;
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        img{
+            width: 300px;
+            margin-top: 10px;
+        }
+
+        h2{
+            margin-top: 20px;
+        }
+
+        input{
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 6px;
+            border: 2px solid darkmagenta;
+            outline: none;
+            text-align: center;
+        }
+
+        button{
+            margin-top: 15px;
+            padding: 8px 20px;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            background-color: darkmagenta;
+            color: white;
+            border: none;
+        }
+
+        button:hover{
+            opacity: 0.85;
+        }
+
+        .error{
+            color: red;
+            margin-top: 10px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 🖼️ Puzzle Image (YOU CAN CHANGE THIS) -->
+    <img src="/Images/bubu-think-bubu-thinking.png" alt="Puzzle Image">
+
+    <!-- 🧠 Puzzle Question -->
+    <h2>Riddle Time Bubifying 😏</h2>
+    <h3><b>Who is Dudu's Lover</b></h3>
+
+    <!-- ✍️ Answer Input -->
+    <input type="text" id="answer" placeholder="Answer chey ra pandhi">
+
+    <br>
+    <button onclick="checkPuzzle()">Submit</button>
+
+    <!-- ❌ Error Message -->
+    <div class="error" id="errorMsg">
+        ❌ Wrong answer! Think again 😛
+    </div>
+
+    <script>
+        function checkPuzzle(){
+            const userAnswer = document.getElementById("answer").value
+                                .trim()
+                                .toLowerCase();
+
+            const error = document.getElementById("errorMsg");
+
+            // ✅ Correct answer for this puzzle is: "bubu"
+            if(userAnswer === "bubu"){
+                // redirect to next page
+                window.location.href = "kavali dudu.html";
+            }else{
+                error.style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+</html>

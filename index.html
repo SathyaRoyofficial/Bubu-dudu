@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World of Dudu</title>
+
+    <link rel="icon" type="image/png" href="/Images/Dudu Standing.png">
+
+    <style>
+        body{
+            background-color: lightpink;
+            text-align: center;
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+            cursor: pointer;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        /* ===== WORD ANIMATION (h1 & h4) ===== */
+        .animate span{
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(50px);
+            filter: blur(6px);
+            animation: wordUp 0.6s ease forwards;
+        }
+
+        @keyframes wordUp{
+            to{
+                opacity: 1;
+                transform: translateY(0);
+                filter: blur(0);
+            }
+        }
+
+        /* ===== IMAGE SLIDE ===== */
+        .b1{
+            margin: -40px;
+            opacity: 0;
+            animation: slideImage 0.5s ease forwards;
+            animation-delay: 1s;
+        }
+
+        @keyframes slideImage{
+            from{
+                transform: translateX(-50px);
+                opacity: 0;
+            }
+            to{
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* ===== BUTTON ANIMATION ===== */
+        .butn a{
+            opacity: 0;
+            animation: buttonRise 1s ease forwards;
+        }
+
+        .butn a:nth-child(1){
+            animation-delay: 0.8s;
+        }
+
+        .butn a:nth-child(2){
+            animation-delay: 0.8s;
+        }
+
+        @keyframes buttonRise{
+            from{
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            to{
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        h1{
+            padding: 20px;
+            margin-top: 0;
+        }
+
+        h4{
+            font-size: 25px;
+            margin: 10px 0;
+        }
+
+        .butn{
+            padding: 15px;
+        }
+
+        button{
+            width: 130px;
+            height: 35px;
+            border-radius: 6px;
+            font-size: medium;
+            border: none;
+            cursor: pointer;
+            margin: 0 10px;
+        }
+
+        .btn{
+            background-color: deeppink;
+            color: white;
+        }
+
+        .bt{
+            background-color: deeppink;
+            color: white;
+        }
+
+        button:hover{
+            opacity: 0.85;
+        }
+
+        a{
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 id="heading" class="animate">Welcome My World</h1>
+
+    <img class="b1"
+         src="/Images/Dudu Bubu1.png"
+         alt="Me n My Bubu"
+         width="450"
+         height="450">
+
+    <h4 id="subheading" class="animate">
+        Okati Chupistha Chusthava??
+    </h4>
+
+    <div class="butn">
+        <a href="chudanu.html">
+            <button class="btn"><b>Uhuu Chudanu</b></button>
+        </a>
+
+        <a href="chusthanu.html">
+            <button class="bt"><b>Chustha</b></button>
+        </a>
+    </div>
+
+    <!-- ===== WORD BY WORD SCRIPT ===== -->
+    <script>
+        function animateText(elementId, delayStep = 0.2) {
+            const el = document.getElementById(elementId);
+            const words = el.innerText.split("  ");
+            el.innerHTML = "";
+
+            words.forEach((word, index) => {
+                const span = document.createElement("span");
+                span.textContent = word + " ";
+                span.style.animationDelay = `${index * delayStep}s`;
+                el.appendChild(span);
+            });
+        }
+
+        animateText("heading", 0.5);
+        animateText("subheading", 0.5);
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Just One Question 😄</title>
+
+    <style>
+        body{
+            background-color: #fff0f5;
+            text-align: center;
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        img{
+            width: 300px;
+            margin-top: 10px;
+        }
+
+        h2{
+            margin-top: 20px;
+        }
+
+        input{
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 6px;
+            border: 2px solid darkmagenta;
+            outline: none;
+            text-align: center;
+        }
+
+        button{
+            margin-top: 15px;
+            padding: 8px 18px;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            background-color: darkmagenta;
+            color: white;
+            border: none;
+        }
+
+        button:hover{
+            opacity: 0.85;
+        }
+
+        .error{
+            color: red;
+            margin-top: 10px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>Bubu Answer chesthe Kani Pampiyanu 😛</h3>
+    <img src="/Images/bubu eating duud.jfif" alt="Question Image">
+
+    <h2>Bubu Ki favourite food enti?? 🤔</h2>
+    <p><b>(Hint: 4 letters)</b></p>
+
+    <input type="text" id="answer" placeholder="Type here...">
+
+    <br>
+    <button onclick="checkAnswer()">Submit</button>
+
+    <div class="error" id="errorMsg">
+        ❌ Ayyo Wrong Answer 😛 Try again
+    </div>
+
+    <script>
+        function checkAnswer(){
+            const userAnswer = document.getElementById("answer").value.trim().toLowerCase();
+            const error = document.getElementById("errorMsg");
+
+            if(userAnswer === "dudu"){
+                // ✅ Correct → go to next page
+                window.location.href = "answer pass.html";
+            }else{
+                // ❌ Wrong → show error
+                error.style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Valentine 💖</title>
+
+<style>
+    body{
+        margin: 0;
+        height: 100vh;
+        overflow: hidden;
+        background: radial-gradient(circle, #ffb6c1, #ff69b4);
+        font-family: 'Trebuchet MS', Arial, sans-serif;
+        text-align: center;
+        color: white;
+    }
+
+    h1{
+        margin-top: 40px;
+        font-size: 42px;
+        text-shadow: 0 0 15px #fff;
+    }
+
+    p{
+        font-size: 22px;
+        margin-top: 10px;
+        text-shadow: 0 0 10px #fff;
+    }
+
+    img{
+        width: 320px;
+        margin-top: 20px;
+        animation: zoomIn 1.5s ease forwards;
+    }
+
+    @keyframes zoomIn{
+        from{
+            transform: scale(0.5);
+            opacity: 0;
+        }
+        to{
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+    /* 🌹 Rose Petals */
+    .petal{
+        position: fixed;
+        top: -10%;
+        font-size: 24px;
+        animation: fall linear infinite;
+        opacity: 0.8;
+    }
+
+    @keyframes fall{
+        to{
+            transform: translateY(110vh) rotate(360deg);
+        }
+    }
+
+    /* 💖 Hearts */
+    .heart{
+        position: fixed;
+        bottom: -10%;
+        font-size: 20px;
+        color: #ff1493;
+        animation: floatUp linear infinite;
+        filter: drop-shadow(0 0 8px hotpink);
+    }
+
+    @keyframes floatUp{
+        to{
+            transform: translateY(-120vh);
+            opacity: 0;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<h1>Happy Valentine’s Day 💖</h1>
+<p>You are my forever Bubifyyy 🌸</p>
+
+<img src="/Images/dudu_propose-removebg-preview.png" alt="Valentine Image" width="1000px">
+
+<!-- 🌹 Petals & 💖 Hearts created by JS -->
+
+<script>
+    // 🌹 Rose petals
+    for(let i = 0; i < 25; i++){
+        let petal = document.createElement("div");
+        petal.className = "petal";
+        petal.innerHTML = "🌹";
+        petal.style.left = Math.random() * 100 + "vw";
+        petal.style.animationDuration = (5 + Math.random() * 5) + "s";
+        petal.style.fontSize = (18 + Math.random() * 20) + "px";
+        document.body.appendChild(petal);
+    }
+
+    // 💖 Hearts
+    for(let i = 0; i < 20; i++){
+        let heart = document.createElement("div");
+        heart.className = "heart";
+        heart.innerHTML = "💖";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = (6 + Math.random() * 4) + "s";
+        heart.style.fontSize = (16 + Math.random() * 18) + "px";
+        document.body.appendChild(heart);
+    }
+</script>
+
+</body>
+</html>
